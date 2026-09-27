@@ -21,18 +21,21 @@ Carregado diretamente via link (não incluído no repositório): `storage.google
 
 | Modelo | Recall (fraude) | Precisão (fraude) | F1 (fraude) |
 |---|---|---|---|
-| Regressão Logística (baseline) | _preencher_ | _preencher_ | _preencher_ |
-| Regressão Logística + SMOTE | _preencher_ | _preencher_ | _preencher_ |
-| Random Forest | _preencher_ | _preencher_ | _preencher_ |
-| XGBoost | _preencher_ | _preencher_ | _preencher_ |
-| XGBoost + GridSearchCV | _preencher_ | _preencher_ | _preencher_ |
+| Regressão Logística (baseline) | 0.62 | 0.86 | 0.72 |
+| Regressão Logística + SMOTE | 0.86 | 0.06 | 0.12 |
+| Random Forest | 0.78 | 0.82 | 0.80 |
+| Pipeline (Scaler + Regressão Logística) | 0.62 | 0.86 | 0.72 |
+| XGBoost | 0.65 | 0.79 | 0.83 |
+| XGBoost + GridSearchCV | 0.72 | 0.84 | 0.78 |
 
 ## Avaliação
-- Curvas ROC e Precisão-Recall (baseline). AUC: `_preencher_`.
+- Curvas ROC e Precisão-Recall (baseline). AUC: `~0.96`.
 - Limiar de decisão testado: `0.3` (padrão é `0.5`), para aumentar o recall de fraude.
 - Importância das variáveis via `feature_importances_` do XGBoost e explicação individual via SHAP.
 
 ## Como Rodar
+(caso não use o google colab)
+
 ```bash
 pip install -r requirements.txt
 ```
